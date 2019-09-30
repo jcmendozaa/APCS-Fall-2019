@@ -105,6 +105,69 @@ public class Calculate {
 		return minimum;
 	}
 	public static double round2(double input) {
-		
+		double answer;
+		double thousandDigit = input % 0.01;
+		if(thousandDigit > .005) {
+			answer = (input + 0.01) - thousandDigit;
+		} else {
+			answer = (input - thousandDigit);
+		}
+		return answer;
 	}
+	public static double exponent(double integer, int power) {
+		double answer = integer;
+		int i = 1;
+		if (power == 0) {
+			answer = 1;
+		} else {
+		while(i != power) {
+			answer *= integer;
+			i ++;
+		}
+		}
+		return answer; 
+	}
+	public static int factorial(int integer) {
+		int i = integer - 1;
+		int answer = integer;
+		while(i != 1) {
+			answer *= i;
+			i --;
+		}
+		return answer;
+	}
+	public static boolean isPrime(int input) {
+		boolean answer = true; 
+		if ((input % 2 == 0) || (input % 3 == 0)) {
+			answer = false;
+		}
+		return answer;
+	}
+	public static int gcf(int input1, int input2) {
+		int gcomFactor = 1;
+		int input1Factor = 1;
+		int input2Factor = 1;
+		int largerInput = (int) Calculate.max(input1, input2);
+		for(int i = 1; i <= largerInput; i++) {
+			if(input1 % i == 0) {
+				input1Factor = i;
+			}
+			if(input2 % i == 0) {
+				input2Factor = i;
+			}
+			if(input2Factor == input1Factor) {
+				gcomFactor = input1Factor;
+			}
+		}
+		return gcomFactor;
+	}
+	public static double sqrt(double number) {
+		double approxGuess = number / 2;
+		if (number < 0) {
+			throw new IllegalArgumentException("Number must be greater than 0"); 
+		}
+		while (((educatedGuess * educatedGuess) - number) >= .005 || ((educatedGuess * educatedGuess) - number) <= -.005) {
+			educatedGuess = 0.5 * (number / educatedGuess + educatedGuess);
+		}
+		return round2(educatedGuess);
 }
