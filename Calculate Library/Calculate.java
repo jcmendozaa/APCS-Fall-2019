@@ -162,12 +162,33 @@ public class Calculate {
 		return gcomFactor;
 	}
 	public static double sqrt(double number) {
-		double approxGuess = number / 2;
+		double goodGuess = number / 2;
 		if (number < 0) {
 			throw new IllegalArgumentException("Number must be greater than 0"); 
 		}
-		while (((educatedGuess * educatedGuess) - number) >= .005 || ((educatedGuess * educatedGuess) - number) <= -.005) {
-			educatedGuess = 0.5 * (number / educatedGuess + educatedGuess);
+		while (((goodGuess * goodGuess) - number) >= .005 || ((goodGuess * goodGuess) - number) <= -.005) {
+			goodGuess = 0.5 * (number / goodGuess + goodGuess);
 		}
-		return round2(educatedGuess);
+		return round2(goodGuess);
+	}
+	public static String quadForm(int input1, int input2, int c) {
+		double root1=0;
+		double root2=0;
+		if (discriminant(input1, input2, c) < 0) {
+		return "no real roots";
+		}
+		else if (discriminant(input1, input2, c) > 0) {
+			root1=(-input2 + sqrt(discriminant(input1, input2, c)))/(2 * input1);
+			root2=(-input2 - sqrt(discriminant(input1, input2, c)))/(2 * input1);
+			return round2(root1)+ " and " +round2(root2);
+		}
+		else {
+			root1 = -input2 / (2 * input1);
+			return round2(root1)+"";
+		}
+	}
 }
+	
+	
+	
+	
