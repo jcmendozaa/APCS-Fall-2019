@@ -13,7 +13,6 @@ public class hourglass {
  /::::::::\ 8 : + 1_
 |”””””””””| 9 "
 
-sorry bad variable names
 	 */
 	public static void main(String[] args) {
 		//top half
