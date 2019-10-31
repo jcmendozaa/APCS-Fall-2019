@@ -12,6 +12,7 @@ public class DoMath {
 		System.out.println(Calculate.average(2.5, 5.5, 4.5));
 		System.out.println(Calculate.toDegrees(5));
 		System.out.println(Calculate.toRadians(274));
+		System.out.println(Calculate.discriminant(1, 5, 4));
 		System.out.println(Calculate.toImproperFrac(1, 5, 3));
 		System.out.println(Calculate.foil(2,3,6,-7,"n"));
 		System.out.println(Calculate.isDivisibleBy(2,71));
