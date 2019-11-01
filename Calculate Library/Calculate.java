@@ -128,11 +128,9 @@ public class Calculate {
 		return answer; 
 	}
 	public static int factorial(int integer) {
-		int i = integer - 1;
-		int answer = integer;
-		while(i != 1) {
+		int answer = 1;
+		for(int i = 1; i <= integer; i++) {
 			answer *= i;
-			i --;
 		}
 		return answer;
 	}
