@@ -2,22 +2,25 @@ import java.util.Scanner;
 // input example : 
 public class FracCalc {
 	public static String produceAnswer(String input) {
-		String operator = "";
-		if()
+		String inputString = input;
 		String newFrac = "";
-		String firstValue = input.substring(0, input.indexOf(" "));
-		String secondValue = input.substring(input.indexOf());
-		int wholeNum;
-		int firstNumerator;
-		int firstDenominator;
-		int secondNumerator;
-		int secondDenominator;
-		
-		return firstValue;
+		if(inputString == "quit") {
+			newFrac = "Bye";
+		} else {
+			char operator = inputString.charAt(inputString.indexOf(" ") + 1);
+			String firstValue = inputString.substring(0, inputString.indexOf(" "));
+			String secondValue = inputString.substring(firstValue.length() + 3, inputString.length());
+			int wholeNum;
+			int firstNumerator;
+			int firstDenominator;
+			int secondNumerator;
+			int secondDenominator;	
+		}
+		return newFrac;
 	}
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
-		System.out.println("Enter the fraction: ");
+		System.out.println("Enter the fraction: \nEnter \"quit\" to quit:");
 		String frac = scnr.nextLine();
 		System.out.println(FracCalc.produceAnswer(frac));
 	}
